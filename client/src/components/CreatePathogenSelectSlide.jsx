@@ -47,7 +47,7 @@ const CreatePathogenSelectSlide = ({user, setUser, setPageState, cancel}) => {
   }
 
   return (
-    <Stack sx={{padding: '4rem',
+    <Stack sx={{padding: {xs: '1rem' ,md: '4rem'},
     borderRadius: '15px',
     boxShadow: '0px 2px 9px 1px #004e64',
     textShadow: '0 0 #004e64', backgroundColor: '#fefefe'}}>
@@ -56,7 +56,7 @@ const CreatePathogenSelectSlide = ({user, setUser, setPageState, cancel}) => {
       </Typography>
       <FormControl>
         <Typography variant='h4' component='h2' color='primary' sx={{ mb: '1rem', fontSize: '1.5rem'}}>Pathogen Type</Typography>
-        <FormGroup sx={{maxHeight: '200px'}}>
+        <FormGroup sx={{maxHeight: {xs: 'auto', md:'200px'}}}>
           {pathogenList.map((oneUser, indx) => {
              return <FormControlLabel sx={{color: '#27187e'}} key={indx} label={oneUser} control={<Checkbox color='secondary' value={oneUser} onChange={handleChange} />} />
           })}

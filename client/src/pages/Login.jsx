@@ -64,7 +64,7 @@ const Login = ({setIsLoggedIn, loggedIn}) => {
 
   return (
     <Stack justifyContent='center' alignItems='center' sx={{height: 'calc(100vh - 64px)', backgroundImage: 'url(images/lab-bg.jpg)', backgroundSize: 'cover'}}>
-      <Stack sx={{width: {xs: '90%', sm: '50%'}, padding: '4rem',
+      <Stack sx={{width: {xs: '80%', sm: '50%'}, padding: {xs: '1rem' ,md: '4rem'},
     borderRadius: '15px',
     boxShadow: '0px 2px 9px 1px #004e64',
     textShadow: '0 0 #004e64', backgroundColor: '#fefefe'}}>

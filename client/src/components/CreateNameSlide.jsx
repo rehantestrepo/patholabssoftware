@@ -23,7 +23,7 @@ const clickHandler = () =>  {
 }
 
   return (
-    <Box sx={{padding: '4rem',
+    <Box sx={{padding: {xs: '1rem' ,md: '4rem'},
     borderRadius: '15px',
     boxShadow: '0px 2px 9px 1px #004e64',
     textShadow: '0 0 #004e64', backgroundColor: '#fefefe'}}>

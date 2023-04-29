@@ -7,7 +7,7 @@ const NoDataAvailable = () => {
   return (
     <Stack justifyContent='center' alignItems='center' sx={{width: '100%', gridColumn: '1/-1',  height: 'calc(100vh - 98px)'}}>
       <Box>
-      <img src="images/NoDataAvailable.png" alt="No Data Available" />
+      <img style={{width: '100%'}} src="images/NoDataAvailable.png" alt="No Data Available" />
     </Box>
     </Stack>
   )
