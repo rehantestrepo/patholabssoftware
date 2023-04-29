@@ -66,9 +66,9 @@ const Login = ({setIsLoggedIn, loggedIn}) => {
     <Stack justifyContent='center' alignItems='center' sx={{height: 'calc(100vh - 64px)', backgroundImage: 'url(images/lab-bg.jpg)', backgroundSize: 'cover'}}>
       <Stack sx={{width: {xs: '90%', sm: '50%'}, padding: '4rem',
     borderRadius: '15px',
-    boxShadow: '0px 2px 9px 1px #C7E9B0',
-    textShadow: '0 0 #A4BC92', backgroundColor: '#fff'}}>
-        <Typography variant="h4" component="h1" textAlign='center' sx={{color: '#27496D'}}>
+    boxShadow: '0px 2px 9px 1px #004e64',
+    textShadow: '0 0 #004e64', backgroundColor: '#fefefe'}}>
+        <Typography variant="h4" component="h1" textAlign='center' color="primary">
             Login
         </Typography>
         <form noValidate autoComplete='off' onSubmit={handleSubmit}>
@@ -76,7 +76,7 @@ const Login = ({setIsLoggedIn, loggedIn}) => {
         sx={{
           my: '1.3rem',
           display: 'block',
-          input: {color: '#27496D'}
+          input: {color: '#27187e'}
       }}
         label="Username"
         name='username'
@@ -92,7 +92,7 @@ const Login = ({setIsLoggedIn, loggedIn}) => {
         sx={{
           my: '1.3rem',
           display: 'block',
-          input: {color: '#27496D'}
+          input: {color: '#27187e'}
       }}
         label="Password"
         name='password'
@@ -105,7 +105,7 @@ const Login = ({setIsLoggedIn, loggedIn}) => {
         error={userErrors.passwordError}
         helperText={userErrors.passwordError && 'Password is required'}
         />
-        <Button type='submit' variant='contained' fullWidth sx={{'&:hover':{backgroundColor: '#3B5249'}}}>Login</Button>
+        <Button type='submit' variant='contained' fullWidth sx={{'&:hover':{backgroundColor: '#a200ff'}}}>Login</Button>
         </form>
       </Stack>
     </Stack>

@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Stack, Typography } from '@mui/material'
+import { Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup,  Stack, Typography } from '@mui/material'
 import React, { useRef } from 'react'
 
 const pathogenList = [
@@ -27,7 +27,6 @@ const CreatePathogenSelectSlide = ({user, setUser, setPageState, cancel}) => {
   }
 
   const handleNext = () => {
-    // if list is empty throw error
 
     if (selectedPathogenList.current.length === 0) {
       alert('At least select one pathogen.')
@@ -50,17 +49,16 @@ const CreatePathogenSelectSlide = ({user, setUser, setPageState, cancel}) => {
   return (
     <Stack sx={{padding: '4rem',
     borderRadius: '15px',
-    boxShadow: '0px 2px 9px 1px #C7E9B0',
-    textShadow: '0 0 #A4BC92'}}>
+    boxShadow: '0px 2px 9px 1px #004e64',
+    textShadow: '0 0 #004e64', backgroundColor: '#fefefe'}}>
       <Typography variant='h4' component='h1'>
         {user.patient}
       </Typography>
       <FormControl>
-        <FormLabel sx={{    mb: '1rem',
-    textShadow: '0 0 #A4BC92', fontSize: '1.5rem'}}>Pathogen Type</FormLabel>
+        <Typography variant='h4' component='h2' color='primary' sx={{ mb: '1rem', fontSize: '1.5rem'}}>Pathogen Type</Typography>
         <FormGroup sx={{maxHeight: '200px'}}>
           {pathogenList.map((oneUser, indx) => {
-             return <FormControlLabel key={indx} label={oneUser} control={<Checkbox value={oneUser} onChange={handleChange} />} />
+             return <FormControlLabel sx={{color: '#27187e'}} key={indx} label={oneUser} control={<Checkbox color='secondary' value={oneUser} onChange={handleChange} />} />
           })}
         </FormGroup>
       </FormControl>

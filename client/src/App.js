@@ -6,13 +6,15 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from './components/Header';
 import { ThemeProvider, createTheme } from '@mui/material';
 
+// 5f0f40
+
 const outerTheme = createTheme({
   palette: {
     primary: {
-      main: '#519872',
+      main: '#7400b8',
     },
     secondary: {
-      main: '#678CEC',
+      main: '#004e64',
     },
   },
 });

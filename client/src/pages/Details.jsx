@@ -1,7 +1,17 @@
-import { Box } from '@mui/material';
+import { Box, CircularProgress, Stack } from '@mui/material';
 import DetailCard from '../components/DetailCard';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+
+const NoDataAvailable = () => {
+  return (
+    <Stack justifyContent='center' alignItems='center' sx={{width: '100%', gridColumn: '1/-1',  height: 'calc(100vh - 98px)'}}>
+      <Box>
+      <img src="images/NoDataAvailable.png" alt="No Data Available" />
+    </Box>
+    </Stack>
+  )
+}
 
 const Details = () => {
 
@@ -20,17 +30,22 @@ const Details = () => {
   },[])
 
 
-  if (isLoading) {
-    return <h1 style={{color: '#27496D', backgroundColor: '#A4D0A4'}}>Loading....</h1>
-  }
+    if (isLoading) {
+    return <Box sx={{minHeight: 'calc(100vh - 64px)'}}>
+      <Stack justifyContent='center' alignItems='center' sx={{minHeight: 'calc(100vh - 64px)'}}>
+      <CircularProgress size={200}/>
+      </Stack>
+    </Box>
+    }
+
 
 
 
   return (
     <>
-    <Box sx={{minHeight: 'calc(100vh - 64px)', backgroundColor: '#A4D0A4'}}>
-    <Box sx={{ height: '100%', p: '1rem', display: 'grid', gridTemplateColumns: {xs:'1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr', xl: '1fr 1fr 1fr 1fr'}, gridAutoRows: 'max-content', gap: {xs: '.5rem', md: '1rem'}}}>
-        {fetchedData.length === 0? <h1 style={{color: '#27496D'}}>No Data Available</h1> : fetchedData.map((item, indx) => <DetailCard key={indx} {...item} />)}
+    <Box sx={{minHeight: 'calc(100vh - 64px)', backgroundColor: '#f1faee'}}>
+    <Box sx={{ height: '100%', p: '1rem', display: 'grid', gridTemplateColumns: {xs:'1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr', xl: '1fr 1fr 1fr'}, gridAutoRows: 'max-content', gap: {xs: '.5rem', md: '1rem'}}}>
+        {fetchedData.length === 0? <NoDataAvailable /> : fetchedData.map((item, indx) => <DetailCard key={indx} {...item} />)}
     </Box>
     </Box>
     </>

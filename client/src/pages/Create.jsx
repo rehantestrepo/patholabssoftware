@@ -32,6 +32,11 @@ const Create = () => {
     setPageState("name")
   }
 
+  const backToDetails = () => {
+    cancel()
+    navigate('/details')
+  }
+
   const navigate = useNavigate()
 
   const handleChange = (e) => {
@@ -74,10 +79,10 @@ const Create = () => {
 	};
 
   return (
-    <Stack justifyContent='center' alignItems='center' sx={{width: '100%',  height: 'calc(100vh - 64px)'}}>
+    <Stack justifyContent='center' alignItems='center' sx={{width: '100%',  height: 'calc(100vh - 64px)', backgroundColor: '#f1faee'}}>
     <Box sx={{width: {xs: '90%', md: '60%'}}}>
       {pageState === "name"? (
-        <CreateNameSlide setPageState={setPageState} user={user} handleChange={handleChange} userErrors={userErrors} setUserErrors={setUserErrors} cancel={cancel} />
+        <CreateNameSlide setPageState={setPageState} user={user} handleChange={handleChange} userErrors={userErrors} setUserErrors={setUserErrors} backToDetails={backToDetails} />
 
       ): pageState === "selectPathogen"? (
         <CreatePathogenSelectSlide setPageState={setPageState} user={user} setUser={setUser} cancel={cancel}/>
