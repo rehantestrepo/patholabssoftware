@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Stack, TextField, Typography } from '@mui/material';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -63,18 +64,18 @@ const Login = ({setIsLoggedIn, loggedIn}) => {
   }
 
   return (
-    <Stack justifyContent='center' alignItems='center' sx={{height: 'calc(100vh - 64px)', backgroundImage: 'url(images/lab-bg.jpg)', backgroundSize: 'cover'}}>
-      <Stack sx={{width: {xs: '80%', sm: '50%'}, padding: {xs: '1rem' ,md: '4rem'},
-    borderRadius: '15px',
+    <Stack justifyContent='center' alignItems='center' sx={{height: 'calc(100vh - 64px)', backgroundImage: 'url(images/lab-bg.png)', backgroundSize: 'cover'}}>
+      <Stack rowGap={1} sx={{width: {xs: '80%', sm: '300px'}, px: {xs: '1rem' ,md: '2rem'}, py: {xs: '.5rem' ,md: '1rem'},
+    borderRadius: '5px',
     boxShadow: '0px 2px 9px 1px #004e64',
     textShadow: '0 0 #004e64', backgroundColor: '#fefefe'}}>
         <Typography variant="h4" component="h1" textAlign='center' color="primary">
-            Login
+            Let's Login !
         </Typography>
         <form noValidate autoComplete='off' onSubmit={handleSubmit}>
         <TextField
         sx={{
-          my: '1.3rem',
+          my: '1rem',
           display: 'block',
           input: {color: '#27187e'}
       }}
@@ -82,15 +83,15 @@ const Login = ({setIsLoggedIn, loggedIn}) => {
         name='username'
         value={user.username}
         onChange={handleChange}
-        variant='outlined'
+        variant='standard'
         fullWidth
         required
         error={userErrors.usernameError}
-        helperText={userErrors.usernameError && 'Username is required'}
+        helperText={userErrors.usernameError ? 'Username is required' : ' '}
         />
         <TextField
         sx={{
-          my: '1.3rem',
+          my: '1rem',
           display: 'block',
           input: {color: '#27187e'}
       }}
@@ -99,13 +100,13 @@ const Login = ({setIsLoggedIn, loggedIn}) => {
         value={user.password}
         onChange={handleChange}
         type='password'
-        variant='outlined'
+        variant='standard'
         fullWidth
         required
         error={userErrors.passwordError}
-        helperText={userErrors.passwordError && 'Password is required'}
+        helperText={userErrors.passwordError ? 'Password is required': ' '}
         />
-        <Button type='submit' variant='contained' fullWidth sx={{'&:hover':{backgroundColor: '#a200ff'}}}>Login</Button>
+        <Button type='submit' startIcon={<LockOpenIcon />} fullWidth>Login</Button>
         </form>
       </Stack>
     </Stack>

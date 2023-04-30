@@ -5,13 +5,14 @@ import Login from './pages/Login'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from './components/Header';
 import { ThemeProvider, createTheme } from '@mui/material';
+import { blue } from '@mui/material/colors'
 
 // 5f0f40
 
 const outerTheme = createTheme({
   palette: {
     primary: {
-      main: '#7400b8',
+      main: blue[900],
     },
     secondary: {
       main: '#004e64',

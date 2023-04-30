@@ -5,6 +5,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
+import BiotechIcon from '@mui/icons-material/Biotech';
+import { IconButton } from '@mui/material';
 
 export default function Header({setIsLoggedIn, isLoggedIn}) {
 
@@ -21,6 +23,15 @@ export default function Header({setIsLoggedIn, isLoggedIn}) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
+        <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <BiotechIcon fontSize='2rem' />
+          </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             PathoLab
           </Typography>
