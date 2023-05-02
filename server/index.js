@@ -29,6 +29,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use("/uploads", express.static("./uploads"));
 app.use("/", express.static("./uploads/build"));
+app.use("/create", express.static("./uploads/build"));
+app.use("/details", express.static("./uploads/build"));
 
 
 const PORT = 4000 || process.env.PORT
