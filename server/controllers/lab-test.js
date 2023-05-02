@@ -19,13 +19,14 @@ const createTest = async(req, res) => {
 	const newPathogensData = []
 
 	for (let key in remainingData) {
-		newPathogensData.push({pathogensName: key, infected: remainingData[key]});
-}
+		newPathogensData.push({pathogensName: key, infected: remainingData[key], image: req?.files[`${key}-img`][0]?.path});
+		console.log({image: req?.files[`${key}-img`][0]?.path});
+	}
 
-	const image = req.file.path;
+	
+
 	await LabTestModel.create({
 		name,
-		image,
 		pathogensData: newPathogensData
 	});
 
