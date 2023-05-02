@@ -33,9 +33,9 @@ app.use("/", express.static("./uploads/build"));
 
 const PORT = 4000 || process.env.PORT
 
-app.use('/details', labTestRoutes)
-app.use('/login', loginRoutes)
-app.post('/create', upload.single("image"), createTest)
+app.use('/api/details', labTestRoutes)
+app.use('/api/login', loginRoutes)
+app.post('/api/create', upload.single("image"), createTest)
 
 app.use('*', (req,res)=>{
     res.send("error resource doesn't exist")
