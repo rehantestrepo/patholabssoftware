@@ -18,19 +18,25 @@ const createTest = async(req, res) => {
 
 	const newPathogensData = []
 
-	for (let key in remainingData) {
-		newPathogensData.push({pathogensName: key, infected: remainingData[key], image: req?.files[`${key}-img`][0]?.path});
-		console.log({image: req?.files[`${key}-img`][0]?.path});
-	}
 
-	
+	for (let key in remainingData) {
+
+		if (!req?.files[`${key}-img`]) {
+			newPathogensData.push({pathogensName: key, infected: remainingData[key], image: ""});
+			
+		} else {
+			
+			newPathogensData.push({pathogensName: key, infected: remainingData[key], image: req?.files[`${key}-img`][0]?.path});
+		}
+
+
+	}
 
 	await LabTestModel.create({
 		name,
 		pathogensData: newPathogensData
 	});
 
-	//const data = logic on data
 	return res.status(201).json({msg: 'created'});
 };
 
